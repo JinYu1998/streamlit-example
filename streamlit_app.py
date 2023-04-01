@@ -6,7 +6,7 @@ import openai
 
 with open("api.txt", "r") as f:
     api_key = f.read().strip()
-openai.api_key = "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"
+openai.api_key = api_key
 
 st.title("Test")
 
