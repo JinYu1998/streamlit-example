@@ -1,8 +1,13 @@
+import os
 import random
 import streamlit as st
+from streamlit_cropper import st_cropper
 
 import openai
-openai.api_key = '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'
+
+with open("api.txt", "r") as f:
+    api_key = f.read().strip()
+openai.api_key = api_key
 
 st.title("Test")
 
@@ -40,6 +45,8 @@ n = st.text_input(
     placeholder="5",
 )
 
+# st.markdown('<span style="color:red">红色文本</span>', unsafe_allow_html=True)
+
 st.header("生成文本")
 if st.button("点击按钮生成文本", type="secondary"):
 	# if not st.session_state.button_clicked:
@@ -51,7 +58,7 @@ if st.button("点击按钮生成文本", type="secondary"):
 		messages = [
 		    {"role" : "system", "content" : "You are a helpful English assistant."}
 		]
-		message = f"请使用以下单词{word}, 生成{selected_option}难度的文本, 然后再翻译成中文"
+		message = f"请使用以下单词{word}, 生成{selected_option}难度的文本, 并将其翻译成中文并且分析句子和语法"
 		st.write(word)
 		messages.append(
 		            {"role" : "user", "content" : message},
@@ -66,6 +73,8 @@ if st.button("点击按钮生成文本", type="secondary"):
 		st.markdown("""---""")
 		# st.text_area(label="Sentence", value=reply, height=400)
 		with st.expander("Sentence"):
-			st.write(str(reply))
+			# st.write(reply.split("\n\n")[0])
+			st.write(reply)
+			# st.write(reply.split("\n\n")[2])
 		# st.text_area(label="Sentence", value=reply, height=None)
 		# st.markdown(reply)
