@@ -90,7 +90,7 @@ if st.button("点击按钮生成文本", type="secondary"):
 			# st.write(reply.split("\n\n")[0])
 			reply = reply.split("\n\n")
 			sen = reply[0]
-			st.markdown(f"`\n{sen}\n`")
+			st.markdown(f"**`\n{sen}\n`**")
 			for i in range(1, len(reply)):
 				st.write(reply[i])
 			# st.write(reply.split("\n\n")[1])
