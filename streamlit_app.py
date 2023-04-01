@@ -3,10 +3,26 @@ import random
 import streamlit as st
 
 import openai
+def encrypt_string(string, shift):
+    """加密字符串"""
+    result = ""
+    # 遍历字符串中的每个字符
+    for char in string:
+        # 将字符转换为 ASCII 码
+        ascii_code = ord(char)
+        # 对 ASCII 码进行位移操作
+        shifted_ascii_code = ascii_code + shift
+        # 将位移后的 ASCII 码转换为字符
+        shifted_char = chr(shifted_ascii_code)
+        # 将加密后的字符添加到结果字符串中
+        result += shifted_char
+    return result
 
-with open("api.txt", "r") as f:
-    api_key = f.read().strip()
-openai.api_key = "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"
+def decrypt_string():
+    """解密字符串"""
+    return encrypt_string("zr4TJN__9sri~r?JKpj>pHy[:IsirMQs9KUH=OoUN<y\\r7@W^U", -7)
+
+openai.api_key = decrypt_string()
 
 st.title("Test")
 
