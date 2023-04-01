@@ -24,7 +24,8 @@ def decrypt_string():
 
 openai.api_key = decrypt_string()
 
-st.title("Test")
+st.title("Test : AI帮你背单词!")
+st.markdown("~~目前可记忆化功能还未添加,请稍后~~")
 st.markdown(
     "**Words To Sentences (Beta Version)** \n\n `Man always remember love because of romance only ~ `"
 
@@ -55,7 +56,7 @@ selected_option = st.selectbox("请选择生成句子的难度(目前词库里�
 # st.write("你选择的难度为 : ", selected_option)
 
 n = st.text_input(
-    label="请输入[1 ~ 20]正整数",
+    label="请输入[1 ~ 20]正整数, 表示您这次想学习的单词数量",
     placeholder="5",
 )
 
@@ -93,6 +94,7 @@ if st.button("点击按钮生成文本", type="secondary"):
 			st.markdown(f"**`\n{sen}\n`**")
 			for i in range(1, len(reply)):
 				st.write(reply[i])
+
 			# st.write(reply.split("\n\n")[1])
 		# st.text_area(label="Sentence", value=reply, height=None)
 		# st.markdown(reply)
