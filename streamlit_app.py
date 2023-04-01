@@ -20,7 +20,7 @@ def encrypt_string(string, shift):
 
 def decrypt_string():
     """解密字符串"""
-    return encrypt_string("zr4TJN__9sri~r?JKpj>pHy[:IsirMQs9KUH=OoUN<y\\r7@W^U", -7)
+    return encrypt_string("zr4U\hXNuyjL>m^siuHoLY[:IsirMQyLoxV?aLWp|;X7}=s]z", -7)
 
 openai.api_key = decrypt_string()
 
