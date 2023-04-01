@@ -73,7 +73,7 @@ if st.button("点击按钮生成文本", type="secondary"):
 		messages = [
 		    {"role" : "system", "content" : "You are a helpful English assistant."}
 		]
-		message = f"请使用以下单词{word}, 生成{selected_option}难度的文本, 并将其翻译成中文并且分析句子和语法"
+		message = f"请先对每个单词{word}做一个解释, 然后使用以下单词{word}, 生成{selected_option}难度的文本, 并将其翻译成中文并且分析句子和语法"
 		st.write(word)
 		messages.append(
 		            {"role" : "user", "content" : message},
