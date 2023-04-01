@@ -1,7 +1,6 @@
 import os
 import random
 import streamlit as st
-from streamlit_cropper import st_cropper
 
 import openai
 
