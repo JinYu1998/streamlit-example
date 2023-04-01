@@ -1,6 +1,5 @@
 import random
 import streamlit as st
-from streamlit_cropper import st_cropper
 
 import openai
 openai.api_key = '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'
